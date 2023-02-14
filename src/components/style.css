@@ -1,0 +1,146 @@
+.input {
+    display: flex;
+    width: 100%;
+    position: relative;
+    align-items: center;
+}
+
+.input_box {
+    width: 100%;
+    border-radius: 12px;
+    padding: 1rem;
+    padding-left: 4rem;
+    font-size: 25px;
+    border: none;
+    transition: 0.2s;
+
+}
+
+.dark .input_box {
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    color: var(--Light-Grayish-Blue);
+}
+
+.light .input_box {
+    background-color: var(--Very-Light-Gray);
+    color: var(--Dark-Grayish-Blue);
+}
+
+.input_box:focus {
+    outline: none;
+}
+
+.input-submit {
+    position: absolute;
+    width: 2.22rem;
+    height: 2.22rem;
+    border-radius: 50%;
+    margin: 12px;
+    left: 0;
+    top: 0;
+    border: none;
+    font-size: 15px;
+    background-color: transparent;
+    transition: 0.2s all;
+    cursor: pointer;
+    transition: 0.2s all;
+    transform: scale(0.8);
+}
+
+.input-submit:hover::before {
+    position: absolute;
+    content: " ";
+    background: var(--Check-Background);
+    border-radius: 50%;
+    top: -2px;
+    left: -2px;
+    width: 2.22rem;
+    height: 2.22rem;
+}
+
+.input-submit:hover::after {
+    position: absolute;
+    content: " ";
+    border-radius: 50%;
+    top: 0px;
+    left: 0px;
+    width: 2rem;
+    height: 2rem;
+}
+.input-submit:active::after, .todo-item.checked .input-submit::after {
+    position: absolute;
+    content: "\2713";
+    color: var(--Very-Light-Grayis-Blue);
+    font-size: 1.5rem;
+    background: var(--Check-Background)!important;
+    padding: 2px 9px;
+    border-radius: 50%;
+    top: -2px;
+    left: -2px;
+}
+.input-submit:active:hover::after, .todo-item.checked .input-submit:hover::after {
+    padding: 2px;
+}
+
+.dark .input-submit {
+    border: 2px solid var(--Dark-Grayish-Blue);
+}
+
+.light .input-submit {
+    border: 2px solid var(--Very-Light-Grayis-Blue);
+}
+
+.dark .input-submit:hover::after {
+    background: var(--Very-Dark-Desaturated-Blue);
+}
+
+.light .input-submit:hover::after {
+    background: var(--Very-Light-Gray);
+}
+
+
+
+
+/*todo list style*/
+.todos {
+    width: 100%;
+    height: fit-content;
+    z-index: 1;
+    margin-top: 2rem;
+    border-radius: 10px;
+}
+
+.dark .todos {
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    color: var(--Light-Grayish-Blue);
+}
+
+.light .todos {
+    background-color: var(--Very-Light-Gray);
+    color: var(--Very-Dark-Grayish-Blue);
+}
+
+.todo-item {
+    padding: 0.2rem 1rem;
+    padding-left: 4rem;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.todo-item.checked p{
+    color: var(  --Dark-Grayish-Blue);
+    text-decoration: line-through;
+}
+.dark .todo-item {
+    border-bottom: 1px solid var(--Dark-Grayish-Blue)
+}
+
+.light .todo-item {
+    border-bottom: 1px solid var(--Very-Light-Grayis-Blue)
+}
+
+.todo-item:last-child {
+    border-bottom: none;
+}
