@@ -25,7 +25,7 @@ body{
 }
  .App {
 width: 100vw;
-height: 100vh;
+min-height: 100vh;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -59,9 +59,10 @@ transition: 0.2s all;
   background: none;
   border: none;
   outline: none;
+  cursor: pointer;
  }
  .container{
-  min-width: 60vw;
+  min-width: 50vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -87,15 +88,15 @@ transition: 0.2s all;
 }
 @media (max-width:480px) {
   .pc{
-    display: none;
+    display: none!important;
   }
   .mob{
-    display: block;
+    display: block!important;
   }
 }
 @media (max-width:800px) {
   .heading{
-    margin: 0.5rem 0;
+    margin: 0.1rem 0;
     font-size: 35px;
   }
   .heading h1{
