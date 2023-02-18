@@ -14,19 +14,21 @@
     border: none;
     transition: 0.2s;
     font-size: 18px;
-
 }
 
-.dark .input_box, .dark .edit-input{
+.dark .input_box,
+.dark .edit-input {
     background-color: var(--Very-Dark-Desaturated-Blue);
     color: var(--Light-Grayish-Blue);
 }
 
-.light .input_box ,.light .edit-input{
+.light .input_box,
+.light .edit-input {
     background-color: var(--Very-Light-Gray);
     color: var(--Dark-Grayish-Blue);
 }
-.edit-input{
+
+.edit-input {
     margin: 0.5rem;
     margin-left: 0;
     padding: 0.6rem;
@@ -35,13 +37,17 @@
     transition: 0.2s;
     font-size: 18px;
 }
-.dark .edit-input{
-    border: 1px solid var(--Light-Grayish-Blue);;
+
+.dark .edit-input {
+    border: 1px solid var(--Light-Grayish-Blue);
 }
-.light .edit-input{
-    border: 1px solid var(--Dark-Grayish-Blue);;
+
+.light .edit-input {
+    border: 1px solid var(--Dark-Grayish-Blue);
 }
-.input_box:focus, .edit-input {
+
+.input_box:focus,
+.edit-input {
     outline: none;
 }
 
@@ -81,18 +87,22 @@
     width: 2rem;
     height: 2rem;
 }
-.input-submit:active::after, .todo-item.checked .input-submit::after {
+
+.input-submit:active::after,
+.todo-item.checked .input-submit::after {
     position: absolute;
     content: "\2713";
     color: var(--Very-Light-Grayis-Blue);
     font-size: 1.5rem;
-    background: var(--Check-Background)!important;
+    background: var(--Check-Background) !important;
     padding: 2px 9px;
     border-radius: 50%;
     top: -2px;
     left: -2px;
 }
-.input-submit:active:hover::after, .todo-item.checked .input-submit:hover::after {
+
+.input-submit:active:hover::after,
+.todo-item.checked .input-submit:hover::after {
     padding: 2px;
 }
 
@@ -111,9 +121,6 @@
 .light .input-submit:hover::after {
     background: var(--Very-Light-Gray);
 }
-
-
-
 
 /*todo list style*/
 .todos {
@@ -143,82 +150,117 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: "box-shadow" 0.2s ease-in-out;
 }
-.icon-container{display: flex;gap: 8px;}
-.icon-container span{cursor: pointer;}
-.todo-item.checked p{
-    color: var(  --Dark-Grayish-Blue);
+
+.todo-item.active.checked {
+    display: none;
+}
+
+.todo-item.completed.checked {
+    display: flex;
+}
+
+.todo-item.completed {
+    display: none;
+}
+
+.icon-container {
+    display: flex;
+    gap: 8px;
+}
+
+.icon-container span {
+    cursor: pointer;
+}
+
+.todo-item.checked p {
+    color: var(--Dark-Grayish-Blue);
     text-decoration: line-through;
 }
+
 .dark .todo-item {
-    border-bottom: 1px solid var(--Dark-Grayish-Blue)
+    border-bottom: 1px solid var(--Dark-Grayish-Blue);
 }
 
 .light .todo-item {
-    border-bottom: 1px solid var(--Very-Light-Grayis-Blue)
+    border-bottom: 1px solid var(--Very-Light-Grayis-Blue);
 }
-.footer{
+
+.footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;  
-    color: var( --Dark-Grayish-Blue);
+    justify-content: space-between;
+    color: var(--Dark-Grayish-Blue);
     flex-wrap: wrap;
     gap: 1rem;
-    z-index: 2;
     width: 100%;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     position: relative;
 }
-.footer span{
+
+.footer span {
     cursor: pointer;
-    padding:  1rem;
+    padding: 1rem;
 }
 
-.footer .filter-container{
+.footer .filter-container {
     display: flex;
     gap: 1rem;
     font-weight: 700;
 }
-.filter-container .active{
-    color: var(  --Bright-Blue)!important;
+
+.filter-container .active {
+    color: var(--Bright-Blue) !important;
 }
 
-.dark .footer,.dark     .filter-container {
+.dark .footer,
+.dark .todos,
+.dark .filter-container {
     background-color: var(--Very-Dark-Desaturated-Blue);
-    color: var(  --Dark-Grayish-Blue);
+    color: var(--Dark-Grayish-Blue);
 }
 
-.light .footer,.light     .filter-container {
+.light .footer,
+.light .todos,
+.light .filter-container {
     background-color: var(--Very-Light-Gray);
-    color: var(  --Dark-Grayish-Blue);
+    color: var(--Dark-Grayish-Blue);
 }
-.dark .footer span:hover{
+
+.dark .footer span:hover {
     color: var(--Light-Grayish-Blue);
 }
-.light .footer span:hover{
-    color: var(--Very-Dark-Grayish-Blue)
+
+.light .footer span:hover {
+    color: var(--Very-Dark-Grayish-Blue);
 }
 
-.drag{
+.drag {
     color: var(--Dark-Grayish-Blue);
     margin-top: 3rem;
 }
 
+.light .dragactive {
+    box-shadow: 0 0 6px var(--Dark-Grayish-Blue);
+}
 
+.dark .dragactive {
+    box-shadow: 0 0 6px var(--Very-Light-Grayis-Blue);
+}
 
-@media (max-width:480px) {
-    .filter-container{
+@media (max-width: 480px) {
+    .filter-container {
         position: absolute;
         width: 100%;
         top: 5rem;
         border-radius: 10px;
         justify-content: center;
-        gap: 0.1rem!important;
-    }  
-    .drag{
+        gap: 0.1rem !important;
+    }
+
+    .drag {
         margin-top: 6rem;
     }
-    
-       
 }

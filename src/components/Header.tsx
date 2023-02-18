@@ -5,7 +5,7 @@ interface Props {
     setTheme: React.Dispatch<React.SetStateAction<string>>
 }
 
-const Header: React.Fc<Props> = ({ theme, setTheme }) => {
+const Header: React.FC<Props> = ({ theme, setTheme }) => {
     const changeTheme = () => {
         if (theme === 'dark') {
             setTheme('light');

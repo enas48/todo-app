@@ -4,12 +4,12 @@ import { Todo } from '../model';
 interface Props {
     items: number;
     filter: string;
-    filterTodos: React.Dispatch<React.SetStateAction<Todo[]>>
+    filterTodos: React.Dispatch<React.SetStateAction<string>>
     setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
     todos: Todo[]
 }
 
-const Footer: React.Fc<Props> = ({ todos, items, filter, filterTodos, setTodos }: Props) => {
+const Footer: React.FC<Props> = ({ todos, items, filter, filterTodos, setTodos }: Props) => {
     const clearCompleted = () => {
         setTodos(
             todos.filter((todo) =>
